@@ -18,6 +18,39 @@ body {
   margin: 0;
 }
 
+@keyframes digital-grid-drift {
+  from {
+    background-position:
+      0 0,
+      0 0,
+      0 0;
+  }
+
+  to {
+    background-position:
+      72px 72px,
+      -72px 48px,
+      0 0;
+  }
+}
+
+@keyframes digital-light-sweep {
+  0% {
+    transform: translateX(-35%) skewX(-18deg);
+    opacity: 0;
+  }
+
+  18%,
+  72% {
+    opacity: 0.75;
+  }
+
+  100% {
+    transform: translateX(135%) skewX(-18deg);
+    opacity: 0;
+  }
+}
+
 button,
 a,
 input,
@@ -64,5 +97,32 @@ textarea {
 
   .soft-card {
     @apply rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl;
+  }
+
+  .digital-hero-bg {
+    @apply pointer-events-none absolute inset-0 opacity-70;
+    background-image:
+      linear-gradient(rgba(37, 99, 235, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124, 58, 237, 0.08) 1px, transparent 1px),
+      radial-gradient(circle at 78% 22%, rgba(6, 182, 212, 0.2), transparent 32%);
+    background-size:
+      72px 72px,
+      72px 72px,
+      100% 100%;
+    animation: digital-grid-drift 18s linear infinite;
+  }
+
+  .digital-light-sweep {
+    @apply pointer-events-none absolute -top-24 bottom-0 left-0 w-1/3 opacity-0;
+    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.16), rgba(6, 182, 212, 0.2), transparent);
+    filter: blur(10px);
+    animation: digital-light-sweep 7s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .digital-hero-bg,
+  .digital-light-sweep {
+    animation: none;
   }
 }

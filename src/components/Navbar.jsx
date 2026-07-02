@@ -42,13 +42,6 @@ export default function Navbar() {
           ))}
         </div>
 
-        <a
-          href="/contact"
-          className="hidden rounded-full bg-slate-950 px-4 py-2 text-sm font-bold text-white transition hover:bg-electric lg:inline-flex"
-        >
-          Start a Project
-        </a>
-
         <button
           type="button"
           aria-label="Toggle navigation menu"

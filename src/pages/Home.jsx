@@ -22,6 +22,8 @@ export default function Home() {
   return (
     <>
       <section className="relative overflow-hidden bg-white">
+        <div className="digital-hero-bg" />
+        <div className="digital-light-sweep" />
         <div className="absolute inset-x-0 top-0 h-72 bg-gradient-to-br from-blue-50 via-white to-violet-50" />
         <div className="section-shell relative grid min-h-[calc(100vh-4rem)] gap-10 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>

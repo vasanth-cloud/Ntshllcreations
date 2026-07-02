@@ -12,7 +12,7 @@ function ProductVisual({ product }) {
         <img
           src={rdxCover}
           alt={`${product.title} cover`}
-          className="aspect-video w-full object-cover"
+          className="aspect-video w-full object-contain"
         />
       </div>
     );
@@ -59,9 +59,9 @@ function VideoModal({ product, onClose }) {
         <div className="aspect-video bg-black">
           <iframe
             title={`${product.title} demo video`}
-            src={product.demoVideoEmbedUrl}
+            src={`${product.demoVideoEmbedUrl}?autoplay=1`}
             className="h-full w-full"
-            allow="autoplay; fullscreen"
+            allow="autoplay; fullscreen; encrypted-media"
             allowFullScreen
           />
         </div>
