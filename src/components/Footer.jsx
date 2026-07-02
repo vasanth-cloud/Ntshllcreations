@@ -20,7 +20,7 @@ export default function Footer() {
               <img
                 src={logo}
                 alt="NtShellcreations logo"
-                className="size-12 rounded-2xl border border-white/10 bg-white object-cover"
+                className="size-12 rounded-full border border-white/10 bg-white object-contain p-1"
               />
               <span className="text-xl font-black">{siteConfig.brandName}</span>
             </div>

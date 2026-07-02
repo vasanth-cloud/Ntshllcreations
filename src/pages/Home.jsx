@@ -74,8 +74,8 @@ export default function Home() {
         <div className="section-shell">
           <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
             <div>
-              <p className="eyebrow">Featured products</p>
-              <h2 className="heading-lg mt-3">Ready-to-use digital products</h2>
+              <p className="eyebrow">Featured product</p>
+              <h2 className="heading-lg mt-3">RDX AI Assistant for document QA</h2>
             </div>
             <Link className="secondary-button" to="/products">
               View all products <ArrowRight size={18} />

@@ -29,7 +29,7 @@ export default function Navbar() {
           <img
             src={logo}
             alt="NtShellcreations logo"
-            className="size-11 rounded-2xl border border-slate-200 bg-white object-cover shadow-sm"
+            className="size-11 rounded-full border border-slate-200 bg-white object-contain p-1 shadow-sm"
           />
           <span className="text-lg font-black text-slate-950">{siteConfig.brandName}</span>
         </NavLink>
