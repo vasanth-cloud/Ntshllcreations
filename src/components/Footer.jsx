@@ -1,4 +1,4 @@
-import { ArrowUpRight, Github, Linkedin, Mail, Shell } from 'lucide-react';
+import { ArrowUpRight, Linkedin, Mail, Shell } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { siteConfig } from '../data/site.js';
 
@@ -46,9 +46,6 @@ export default function Footer() {
               </a>
               <a className="secondary-button border-white/10 bg-white/10 text-white hover:border-white hover:text-white" href={siteConfig.linkedinUrl}>
                 <Linkedin size={17} /> LinkedIn
-              </a>
-              <a className="secondary-button border-white/10 bg-white/10 text-white hover:border-white hover:text-white" href={siteConfig.githubUrl}>
-                <Github size={17} /> GitHub
               </a>
             </div>
           </div>

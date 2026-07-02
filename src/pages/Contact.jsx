@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, MessageCircle, Send } from 'lucide-react';
+import { Linkedin, Mail, MessageCircle, Send } from 'lucide-react';
 import CTASection from '../components/CTASection.jsx';
 import { buildWhatsAppUrl, siteConfig } from '../data/site.js';
 
@@ -46,15 +46,6 @@ export default function Contact() {
               <span>
                 <span className="block font-black text-slate-950">LinkedIn</span>
                 <span className="text-sm text-slate-600">Update your LinkedIn URL in site config</span>
-              </span>
-            </a>
-            <a className="soft-card flex items-center gap-4" href={siteConfig.githubUrl}>
-              <span className="grid size-12 place-items-center rounded-2xl bg-slate-100 text-slate-950">
-                <Github size={24} />
-              </span>
-              <span>
-                <span className="block font-black text-slate-950">GitHub</span>
-                <span className="text-sm text-slate-600">Project and code profile placeholder</span>
               </span>
             </a>
           </div>
