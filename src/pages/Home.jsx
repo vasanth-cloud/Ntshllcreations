@@ -24,6 +24,8 @@ export default function Home() {
       <section className="relative overflow-hidden bg-white">
         <div className="digital-hero-bg" />
         <div className="digital-light-sweep" />
+        <div className="digital-particles" />
+        <div className="digital-circuit-lines" />
         <div className="absolute inset-x-0 top-0 h-72 bg-gradient-to-br from-blue-50 via-white to-violet-50" />
         <div className="section-shell relative grid min-h-[calc(100vh-4rem)] gap-10 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
@@ -50,7 +52,8 @@ export default function Home() {
           </div>
 
           <div className="relative">
-            <div className="rounded-[2rem] bg-slate-950 p-5 text-white shadow-glow">
+            <div className="hero-panel-glow" />
+            <div className="relative rounded-[2rem] bg-slate-950 p-5 text-white shadow-glow">
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-3xl bg-white/10 p-5">
                   <Sparkles className="text-cyan-300" />

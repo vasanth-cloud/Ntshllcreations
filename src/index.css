@@ -51,6 +51,48 @@ body {
   }
 }
 
+@keyframes particle-float {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  to {
+    transform: translate3d(54px, -64px, 0);
+    opacity: 0.35;
+  }
+}
+
+@keyframes circuit-pulse {
+  0%,
+  100% {
+    opacity: 0.16;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0.42;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes hero-panel-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.96);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.04);
+  }
+}
+
 button,
 a,
 input,
@@ -118,11 +160,54 @@ textarea {
     filter: blur(10px);
     animation: digital-light-sweep 7s ease-in-out infinite;
   }
+
+  .digital-particles {
+    @apply pointer-events-none absolute inset-0 opacity-70;
+    background-image:
+      radial-gradient(circle, rgba(37, 99, 235, 0.46) 0 2px, transparent 3px),
+      radial-gradient(circle, rgba(6, 182, 212, 0.4) 0 1px, transparent 2px),
+      radial-gradient(circle, rgba(124, 58, 237, 0.32) 0 2px, transparent 3px);
+    background-position:
+      8% 24%,
+      56% 18%,
+      86% 62%;
+    background-size:
+      180px 180px,
+      240px 240px,
+      210px 210px;
+    animation: particle-float 11s ease-in-out infinite alternate;
+  }
+
+  .digital-circuit-lines {
+    @apply pointer-events-none absolute inset-x-0 bottom-0 h-1/2 opacity-60;
+    background-image:
+      linear-gradient(90deg, transparent 0 12%, rgba(37, 99, 235, 0.22) 12% 13%, transparent 13% 100%),
+      linear-gradient(0deg, transparent 0 28%, rgba(6, 182, 212, 0.18) 28% 29%, transparent 29% 100%),
+      linear-gradient(90deg, transparent 0 62%, rgba(124, 58, 237, 0.2) 62% 63%, transparent 63% 100%);
+    background-size:
+      260px 120px,
+      190px 150px,
+      320px 180px;
+    mask-image: linear-gradient(to top, black, transparent);
+    animation: circuit-pulse 6s ease-in-out infinite;
+  }
+
+  .hero-panel-glow {
+    @apply pointer-events-none absolute -inset-6 rounded-[2.5rem];
+    background:
+      radial-gradient(circle at 30% 30%, rgba(6, 182, 212, 0.28), transparent 38%),
+      radial-gradient(circle at 72% 72%, rgba(124, 58, 237, 0.24), transparent 42%);
+    filter: blur(18px);
+    animation: hero-panel-pulse 5.5s ease-in-out infinite;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .digital-hero-bg,
-  .digital-light-sweep {
+  .digital-light-sweep,
+  .digital-particles,
+  .digital-circuit-lines,
+  .hero-panel-glow {
     animation: none;
   }
 }
