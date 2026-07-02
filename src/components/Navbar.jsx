@@ -1,6 +1,7 @@
-import { Menu, Shell, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from '../assets/ntshellcreations-logo.png';
 import { siteConfig } from '../data/site.js';
 
 const navItems = [
@@ -25,9 +26,11 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
       <nav className="section-shell flex h-16 items-center justify-between">
         <NavLink to="/" className="flex items-center gap-3" onClick={() => setIsOpen(false)}>
-          <span className="grid size-10 place-items-center rounded-2xl bg-ink text-white shadow-glow">
-            <Shell size={21} />
-          </span>
+          <img
+            src={logo}
+            alt="NtShellcreations logo"
+            className="size-11 rounded-2xl border border-slate-200 bg-white object-cover shadow-sm"
+          />
           <span className="text-lg font-black text-slate-950">{siteConfig.brandName}</span>
         </NavLink>
 

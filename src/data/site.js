@@ -5,7 +5,7 @@ export const siteConfig = {
   whatsappNumber: '918248161233',
   // Change this email and LinkedIn URL when your real contact links are ready.
   email: 'avasanth081@gmail.com',
-  linkedinUrl: 'https://www.linkedin.com/in/your-profile',
+  linkedinUrl: 'https://www.linkedin.com/in/a-vasanth/',
 };
 
 export function buildWhatsAppUrl(message) {

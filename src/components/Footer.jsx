@@ -1,5 +1,6 @@
-import { ArrowUpRight, Linkedin, Mail, Shell } from 'lucide-react';
+import { ArrowUpRight, Linkedin, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/ntshellcreations-logo.png';
 import { siteConfig } from '../data/site.js';
 
 const quickLinks = [
@@ -16,9 +17,11 @@ export default function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-3">
-              <span className="grid size-11 place-items-center rounded-2xl bg-white text-ink">
-                <Shell size={22} />
-              </span>
+              <img
+                src={logo}
+                alt="NtShellcreations logo"
+                className="size-12 rounded-2xl border border-white/10 bg-white object-cover"
+              />
               <span className="text-xl font-black">{siteConfig.brandName}</span>
             </div>
             <p className="mt-4 max-w-xl text-sm leading-7 text-slate-300">
@@ -41,10 +44,18 @@ export default function Footer() {
           <div>
             <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-300">Connect</h2>
             <div className="mt-4 flex flex-wrap gap-3">
-              <a className="secondary-button border-white/10 bg-white/10 text-white hover:border-white hover:text-white" href={`mailto:${siteConfig.email}`}>
+              <a
+                className="secondary-button border-white/10 bg-white/10 text-white hover:border-white hover:text-white"
+                href={`mailto:${siteConfig.email}`}
+              >
                 <Mail size={17} /> Email
               </a>
-              <a className="secondary-button border-white/10 bg-white/10 text-white hover:border-white hover:text-white" href={siteConfig.linkedinUrl}>
+              <a
+                className="secondary-button border-white/10 bg-white/10 text-white hover:border-white hover:text-white"
+                href={siteConfig.linkedinUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Linkedin size={17} /> LinkedIn
               </a>
             </div>
@@ -52,7 +63,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col justify-between gap-4 border-t border-white/10 pt-6 text-sm text-slate-400 sm:flex-row">
-          <p>© {new Date().getFullYear()} {siteConfig.brandName}. All rights reserved.</p>
+          <p>(c) {new Date().getFullYear()} {siteConfig.brandName}. All rights reserved.</p>
           <Link to="/contact" className="inline-flex items-center gap-1 text-cyan-300 hover:text-white">
             Build with NtShellcreations <ArrowUpRight size={15} />
           </Link>

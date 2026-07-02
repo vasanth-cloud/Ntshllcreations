@@ -39,13 +39,13 @@ export default function Contact() {
                 <span className="text-sm text-slate-600">{siteConfig.email}</span>
               </span>
             </a>
-            <a className="soft-card flex items-center gap-4" href={siteConfig.linkedinUrl}>
+            <a className="soft-card flex items-center gap-4" href={siteConfig.linkedinUrl} target="_blank" rel="noreferrer">
               <span className="grid size-12 place-items-center rounded-2xl bg-violet-50 text-violet">
                 <Linkedin size={24} />
               </span>
               <span>
                 <span className="block font-black text-slate-950">LinkedIn</span>
-                <span className="text-sm text-slate-600">Update your LinkedIn URL in site config</span>
+                <span className="text-sm text-slate-600">https://www.linkedin.com/in/a-vasanth/</span>
               </span>
             </a>
           </div>
