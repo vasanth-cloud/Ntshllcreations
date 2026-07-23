@@ -70,13 +70,26 @@ function VideoModal({ product, onClose }) {
           </button>
         </div>
         <div className="aspect-video bg-black">
-          <iframe
-            title={`${product.title} demo video`}
-            src={`${product.demoVideoEmbedUrl}?autoplay=1`}
-            className="h-full w-full"
-            allow="autoplay; fullscreen; encrypted-media"
-            allowFullScreen
-          />
+          {product.demoVideoType === 'file' ? (
+            <video
+              className="h-full w-full"
+              controls
+              autoPlay
+              playsInline
+              preload="metadata"
+            >
+              <source src={product.demoVideoUrl} type="video/mp4" />
+              Your browser does not support MP4 video playback.
+            </video>
+          ) : (
+            <iframe
+              title={`${product.title} demo video`}
+              src={`${product.demoVideoEmbedUrl}?autoplay=1`}
+              className="h-full w-full"
+              allow="autoplay; fullscreen; encrypted-media"
+              allowFullScreen
+            />
+          )}
         </div>
       </div>
     </div>
@@ -133,7 +146,7 @@ export default function ProductCard({ product }) {
                 <Download size={18} /> Download Resources
               </a>
             )}
-            {product.demoVideoEmbedUrl ? (
+            {product.demoVideoEmbedUrl || product.demoVideoType === 'file' ? (
               <button type="button" className="secondary-button w-full" onClick={() => setIsVideoOpen(true)}>
                 <PlayCircle size={18} /> Demo Video
               </button>
