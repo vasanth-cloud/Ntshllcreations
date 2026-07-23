@@ -2,10 +2,23 @@ import { MessageCircle, PlayCircle, X } from 'lucide-react';
 import { useState } from 'react';
 import logo from '../assets/ntshellcreations-logo.png';
 import rdxCover from '../assets/rdx-ai-cover.png';
+import resumeKitCover from '../assets/ai-resume-master-kit-2026.png';
 import { buildWhatsAppUrl } from '../data/site.js';
 import GradientImage from './GradientImage.jsx';
 
 function ProductVisual({ product }) {
+  if (product.imageType === 'resume-kit-cover') {
+    return (
+      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-950">
+        <img
+          src={resumeKitCover}
+          alt={`${product.title} cover`}
+          className="aspect-video w-full object-cover"
+        />
+      </div>
+    );
+  }
+
   if (product.imageType === 'cover') {
     return (
       <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-950">
@@ -84,7 +97,16 @@ export default function ProductCard({ product }) {
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-violet">{product.category}</p>
               <h2 className="mt-2 text-xl font-black text-slate-950">{product.title}</h2>
             </div>
-            <span className="rounded-full bg-blue-50 px-3 py-1 text-sm font-black text-electric">₹{product.price}</span>
+            <div className="shrink-0 text-right">
+              {product.priceLabel && (
+                <p className="mb-1 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-slate-500">
+                  {product.priceLabel}
+                </p>
+              )}
+              <span className="inline-block rounded-full bg-blue-50 px-3 py-1 text-sm font-black text-electric">
+                ₹{product.price}
+              </span>
+            </div>
           </div>
 
           <p className="mt-3 text-sm leading-7 text-slate-600">{product.description}</p>
@@ -106,11 +128,11 @@ export default function ProductCard({ product }) {
               <button type="button" className="secondary-button w-full" onClick={() => setIsVideoOpen(true)}>
                 <PlayCircle size={18} /> Demo Video
               </button>
-            ) : (
+            ) : product.demoVideoUrl ? (
               <a className="secondary-button w-full" href={product.demoVideoUrl} target="_blank" rel="noreferrer">
                 <PlayCircle size={18} /> Demo Video
               </a>
-            )}
+            ) : null}
             <a className="primary-button w-full" href={buildWhatsAppUrl(message)} target="_blank" rel="noreferrer">
               <MessageCircle size={18} /> Buy on WhatsApp
             </a>

@@ -1,5 +1,22 @@
 export const products = [
   {
+    id: 'ai-resume-master-kit-2026',
+    title: 'AI Resume Master Kit 2026',
+    category: 'Digital Product',
+    price: 299,
+    priceLabel: 'Launch price',
+    description: 'Land more interviews with ATS-ready templates, AI prompts, and recruiter-approved resources.',
+    includes: [
+      'ATS-ready resume templates',
+      'Cover letter and LinkedIn templates',
+      'HR email templates',
+      '100+ AI prompts for your job search',
+      'Bonus checklists, interview questions, and job tracker',
+    ],
+    imageType: 'resume-kit-cover',
+    accent: 'from-slate-950 via-blue-950 to-cyan-700',
+  },
+  {
     id: 'rdx-ai-assistant',
     title: 'RDX AI Assistant',
     category: 'AI Product',

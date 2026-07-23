@@ -8,9 +8,9 @@ export default function Products() {
       <section className="bg-white py-16 sm:py-20">
         <div className="section-shell">
           <p className="eyebrow">Products</p>
-          <h1 className="heading-xl mt-4">RDX AI Assistant product you can buy through WhatsApp</h1>
+          <h1 className="heading-xl mt-4">Digital products built to help you work and grow</h1>
           <p className="body-lg mt-5 max-w-3xl">
-            Explore the RDX AI Assistant, watch the demo video, and contact NtShellcreations directly on
+            Explore practical AI tools and career resources, then contact NtShellcreations directly on
             WhatsApp to purchase or ask questions.
           </p>
         </div>
