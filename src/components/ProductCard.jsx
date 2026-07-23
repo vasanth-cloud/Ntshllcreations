@@ -3,10 +3,23 @@ import { useState } from 'react';
 import logo from '../assets/ntshellcreations-logo.png';
 import rdxCover from '../assets/rdx-ai-cover.png';
 import resumeKitCover from '../assets/ai-resume-master-kit-2026.png';
+import crackCodeCover from '../assets/crackcode-180.png';
 import { buildWhatsAppUrl } from '../data/site.js';
 import GradientImage from './GradientImage.jsx';
 
 function ProductVisual({ product }) {
+  if (product.imageType === 'crackcode-cover') {
+    return (
+      <div className="aspect-[3/2] overflow-hidden rounded-2xl border border-slate-200 bg-slate-950">
+        <img
+          src={crackCodeCover}
+          alt={`${product.title} cover`}
+          className="h-full w-full object-contain"
+        />
+      </div>
+    );
+  }
+
   if (product.imageType === 'resume-kit-cover') {
     return (
       <div className="aspect-[3/2] overflow-hidden rounded-2xl border border-slate-200 bg-slate-950">
@@ -98,7 +111,8 @@ function VideoModal({ product, onClose }) {
 
 export default function ProductCard({ product }) {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-  const message = `Hi NtShellcreations, I want to buy ${product.title}. Price: ₹${product.price}. Please share payment details.`;
+  const priceMessage = product.price ? ` Price: ₹${product.price}.` : '';
+  const message = `Hi NtShellcreations, I want to buy ${product.title}.${priceMessage} Please share the price and payment details.`;
 
   return (
     <>
@@ -109,6 +123,11 @@ export default function ProductCard({ product }) {
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-violet">{product.category}</p>
               <h2 className="mt-2 text-xl font-black text-slate-950">{product.title}</h2>
+              {product.rating && (
+                <p className="mt-1 text-sm tracking-[0.12em] text-amber-400" aria-label={`${product.rating} out of 5 stars`}>
+                  {'★'.repeat(product.rating)}
+                </p>
+              )}
             </div>
             <div className="shrink-0 text-right">
               {product.priceLabel && (
@@ -116,9 +135,11 @@ export default function ProductCard({ product }) {
                   {product.priceLabel}
                 </p>
               )}
-              <span className="inline-block rounded-full bg-blue-50 px-3 py-1 text-sm font-black text-electric">
-                ₹{product.price}
-              </span>
+              {product.price && (
+                <span className="inline-block rounded-full bg-blue-50 px-3 py-1 text-sm font-black text-electric">
+                  ₹{product.price}
+                </span>
+              )}
             </div>
           </div>
 

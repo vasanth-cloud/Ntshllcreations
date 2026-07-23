@@ -1,5 +1,25 @@
 export const products = [
   {
+    id: 'crackcode-180',
+    title: 'CrackCode 180',
+    rating: 5,
+    category: 'Digital Product',
+    priceLabel: 'Contact for price',
+    description: '180 essential coding problems for top tech interviews, organized into a focused DSA preparation roadmap.',
+    includes: [
+      '180 handpicked DSA interview problems',
+      '14 topic-wise problem batches',
+      'Easy, medium, and hard difficulty coverage',
+      'Company-focused questions for top tech interviews',
+      'Problem frequency and company tags',
+      'Arrays, linked lists, trees, graphs, dynamic programming, and more',
+    ],
+    demoVideoUrl: '/videos/crackcode-180-demo.mp4',
+    demoVideoType: 'file',
+    imageType: 'crackcode-cover',
+    accent: 'from-slate-950 via-blue-950 to-cyan-700',
+  },
+  {
     id: 'ai-resume-master-kit-2026',
     title: 'AI Resume Master Kit 2026',
     category: 'Digital Product',
