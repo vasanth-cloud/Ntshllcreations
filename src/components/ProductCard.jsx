@@ -1,4 +1,4 @@
-import { MessageCircle, PlayCircle, X } from 'lucide-react';
+import { Download, MessageCircle, PlayCircle, X } from 'lucide-react';
 import { useState } from 'react';
 import logo from '../assets/ntshellcreations-logo.png';
 import rdxCover from '../assets/rdx-ai-cover.png';
@@ -9,11 +9,11 @@ import GradientImage from './GradientImage.jsx';
 function ProductVisual({ product }) {
   if (product.imageType === 'resume-kit-cover') {
     return (
-      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-950">
+      <div className="aspect-[3/2] overflow-hidden rounded-2xl border border-slate-200 bg-slate-950">
         <img
           src={resumeKitCover}
           alt={`${product.title} cover`}
-          className="aspect-video w-full object-cover"
+          className="h-full w-full object-contain"
         />
       </div>
     );
@@ -124,6 +124,15 @@ export default function ProductCard({ product }) {
           </div>
 
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            {product.resourceDownloadUrl && (
+              <a
+                className="secondary-button w-full"
+                href={product.resourceDownloadUrl}
+                download={product.resourceFileName}
+              >
+                <Download size={18} /> Download Resources
+              </a>
+            )}
             {product.demoVideoEmbedUrl ? (
               <button type="button" className="secondary-button w-full" onClick={() => setIsVideoOpen(true)}>
                 <PlayCircle size={18} /> Demo Video
