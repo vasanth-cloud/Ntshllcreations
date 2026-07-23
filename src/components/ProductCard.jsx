@@ -1,4 +1,4 @@
-import { Download, MessageCircle, PlayCircle, X } from 'lucide-react';
+import { MessageCircle, PlayCircle, X } from 'lucide-react';
 import { useState } from 'react';
 import logo from '../assets/ntshellcreations-logo.png';
 import rdxCover from '../assets/rdx-ai-cover.png';
@@ -137,15 +137,6 @@ export default function ProductCard({ product }) {
           </div>
 
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            {product.resourceDownloadUrl && (
-              <a
-                className="secondary-button w-full"
-                href={product.resourceDownloadUrl}
-                download={product.resourceFileName}
-              >
-                <Download size={18} /> Download Resources
-              </a>
-            )}
             {product.demoVideoEmbedUrl || product.demoVideoType === 'file' ? (
               <button type="button" className="secondary-button w-full" onClick={() => setIsVideoOpen(true)}>
                 <PlayCircle size={18} /> Demo Video

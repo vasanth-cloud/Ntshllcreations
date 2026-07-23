@@ -14,8 +14,6 @@ export const products = [
       'Resume checklist and interview preparation guide',
       'Bonus resources, GitHub README template, and Excel job tracker',
     ],
-    resourceDownloadUrl: '/downloads/AI_Resume_Master_Kit_2026.zip',
-    resourceFileName: 'AI_Resume_Master_Kit_2026.zip',
     demoVideoUrl: '/videos/ai-resume-master-kit-2026-demo.mp4',
     demoVideoType: 'file',
     imageType: 'resume-kit-cover',
